@@ -214,6 +214,8 @@
 				map.dragging.disable();
                 L.DomEvent.addListener(slider, 'mousedown', function(e) {
                     L.DomEvent.stopPropagation(e);
+				map.dragging.disable();
+				map.dragging.enable();	
                 });
 
               // Define the labels of the time slider as an array of strings
@@ -253,8 +255,9 @@
           temporalLegend.addTo(map);
 
         }
+			
 		
-		function drawLegend(min, max) {
+	function drawLegend(min, max) {
 			   //var largeDiameter = calcPropRadius(data.features[0].properties.N) * 2,
                   //smallDiameter = largeDiameter/2;
 			  
