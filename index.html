@@ -17,6 +17,11 @@
         <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 		
 		<script src="https://unpkg.com/esri-leaflet@2.4.1/dist/esri-leaflet.js" integrity="sha512-xY2smLIHKirD03vHKDJ2u4pqeHA7OQZZ27EjtqmuhDguxiUvdsOuXMwkg16PQrm9cgTmXtoxA6kwr8KBy3cdcw=="crossorigin=""></script>
+		
+		
+		<script type="text/javascript" src="casos_10k.geojson"></script>
+
+		<script type="text/javascript"></script>
 
       <style>
           html, body { margin: 0; padding: 0; height: 100%; }
@@ -101,6 +106,22 @@
                 createSliderUI(info.timestamps);
 				drawLegend(info.min,info.max);
             });
+		
+
+		geojson = L.geoJson(x, {
+		style: style,
+		}).addTo(map);
+			
+		function style(feature) {
+		return {
+			weight: 0.6,
+			opacity: 1,
+			color: 'gray',
+			fillOpacity: 0.1,
+			dashArray: '1',
+			//fillColor: getColor(feature.properties.Casos)
+		};
+	}
 
           function processData(data) {
               // First, initialize the variables to hold the timestamps and min/max population values
