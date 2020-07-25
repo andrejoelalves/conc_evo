@@ -30,7 +30,7 @@
             position: absolute;
             bottom: 15px;
             right: 10px;
-            width: 180px;
+            width: 160px;
             margin: 5px auto;
             padding: 6px 8px;
 			line-height: 18px;
@@ -55,11 +55,11 @@
 				left: 0px;
 			}
 		  #legend hr.small, #legend hr.large {
-				width: 80px;
+				width: 60px;
 				color: grey;
 				position: relative;
 				top: 0px;
-				left: 10px;
+				left: -8px;
 			}
       </style>
   </head>
@@ -217,7 +217,7 @@
             // calculate the radius of the proportional symbols based on area
             function calcPropRadius(attributeValue) {
 			  //console.log("atributo " + attributeValue);
-              var scaleFactor = 2.5;   // the scale factor is used to scale the values; the units of the radius are in meters
+              var scaleFactor = 1.2;   // the scale factor is used to scale the values; the units of the radius are in meters
                                          // you may determine the scale factor accordingly based on the range of the values and the mapping scale
               var area = attributeValue * scaleFactor;
 
@@ -283,7 +283,7 @@
 			  
 			  //var largeDiameter = Math.sqrt(1000*5/Math.PI),
                   //smallDiameter = largeDiameter/2;
-			    var largeDiameter = Math.sqrt((max*2.5)/Math.PI)*2;
+			    var largeDiameter = Math.sqrt((max*1.2)/Math.PI)*2;
 				var smallDiameter = largeDiameter/2;
 				console.log("largeDiameter " + max);
 				console.log("smallDiameter " + min);
