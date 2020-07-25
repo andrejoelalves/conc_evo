@@ -83,7 +83,7 @@
 	var map = L.map('map', {
 			center: [37.6, -15],
 			zoom:5,
-			maxZoom: 10,
+			maxZoom: 12,
 			minZoom: 5,
 			maxBounds: extensao,
 		});
@@ -211,7 +211,6 @@
             sliderControl.onAdd = function(map) {
               //initialize a range slider with mousedown control
                 var slider = L.DomUtil.create("input", "range-slider");
-				map.dragging.disable();
                 L.DomEvent.addListener(slider, 'mousedown', function(e) {
                     L.DomEvent.stopPropagation(e);
 				map.dragging.disable();
